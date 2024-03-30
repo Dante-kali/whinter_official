@@ -21,7 +21,7 @@ from django.urls import path
 from django.http import HttpResponse
 
 def saludar(request):
-    return HttpResponse("Hola")
+    return HttpResponse("Hola, esta es mi primera web")
 
 urlpatterns = [   
     path("admin/", admin.site.urls),
