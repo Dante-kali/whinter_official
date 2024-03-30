@@ -26,5 +26,5 @@ def saludar(request):
 urlpatterns = [   
     path("admin/", admin.site.urls),
     path("whinter_official", saludar),
-    path("whinter/", include("whinter.urls"))
+    path("whinter/", include("whinter.urls")),
 ]
