@@ -16,14 +16,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from django.http import HttpResponse
 
 def saludar(request):
-    return HttpResponse("Hola, esta es mi primera web")
+    return HttpResponse("<h1>Hola, esta es mi primera web</h1>")
 
 urlpatterns = [   
     path("admin/", admin.site.urls),
-    path("saludo/", saludar),
+    path("whinter_official", saludar),
+    path("whinter/", include("whinter.urls"))
 ]
