@@ -20,10 +20,10 @@ from django.urls import path
 
 from django.http import HttpResponse
 
-def saludar(xx):
+def saludar(request):
     return HttpResponse("Hola")
 
-urlpatterns = [
+urlpatterns = [   
     path("admin/", admin.site.urls),
     path("saludo/", saludar),
 ]
