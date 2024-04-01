@@ -1,7 +1,7 @@
 from flask import Flask
 
 
-app = Flask("El servidor de Tierra Media")
+app = Flask("servidor DP")
 
 @app.route("/")
 def welcome():
