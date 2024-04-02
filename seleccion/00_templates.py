@@ -1,25 +1,33 @@
 from flask import Flask
 
 
-app = Flask("Mi servidor")
+app = Flask("My server")
 
 @app.route("/")
 def saludo():
     return """
-    <h1>Bienvenido a mi servidor</h1>
-    <h3>Rutas Posibles:</h3>
-    <li>/seleccion</li>"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Welcome to the server</title>
+    </head>
+    <body>
+        <h1>Path available</h1>
+        <h3>/selection</h3> 
+        <p>Available Path: <a href="/selection">/selection</a></p>
+    </body>
+    </html>"""
 
-@app.route("/seleccion")
+@app.route("/selection")
 def seleccion():
     return """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Así forma el equipo seleccionado Nacional</title>
+        <title>the selection national</title>
     </head>
     <body>
-        <h1>Estos son los 11 jugadores titulares</h1>
+        <h1>These are the 11 starting players</h1>
         <ul>
             <li>Emiliano Martínez - Arquero</li>
             <li>Nicolas Otamendi - Defensor</li>
@@ -38,4 +46,4 @@ def seleccion():
     """
 
 
-app.run(debug=True, port=8080)
+app.run(debug=True, port=8000)
