@@ -2,6 +2,26 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
+def views(request):
+    print("-" * 100)
+    print("-" * 100)
+    print(request.method)
+    date = {
+        'date' : "Welcome to the Aplication 'Whinter'"
+    }
+    return render(request, 'template1.html', date)
+
+
+def search(request, name):
+    print("-" * 100)
+    print("-" * 100)
+    print(request.method)
+    name = {
+        'name' : name
+    }
+    return render(request, 'template2.html', name)
+
+
 def selection(request):
     print("-" * 100)
     print("-" * 100)
@@ -9,24 +29,13 @@ def selection(request):
     
     selection = {
         'players': [
-            "Emiliano Martínez - Arquero",
-            "Nicolas Otamendi - Defensor",
-            "Nahuel Molina - Defensor",
-            "Gonzalo Montiel - Defensor",
-            "Lisando Martinez - Defensor",
-            "Angel di maria - Mediocampista"
+            {"nombre": "Emiliano Martínez ", "rol": "arquero"},
+            {"nombre": "Nicolas Otamendi ", "rol": "defensor"},
+            {"nombre": "Nahuel Molina ", "rol": "defensor"},
+            {"nombre": "Gonzalo Montiel ", "rol": "defensor"},
+            {"nombre": "Lisando Martinez ", "rol": "defensor"},
+            {"nombre": "Angel di maria", "rol": "mediocampista"},
+            {"nombre": "Julián Álvarez", "rol": "delantero"},
         ]
     }
-    return render(request, 'template.html', selection)
-    
-def views(request):
-    print("-" * 100)
-    print("-" * 100)
-    print(request.method)
-    return HttpResponse("<h1>Hello, welcome to the aplication 'whinter'<h1>")
-
-def search(request, name):
-    print("-" * 100)
-    print("-" * 100)
-    print(request.method)
-    return HttpResponse(f'<h3>searching information for the user: {name}</h3>') 
+    return render(request, 'template3.html', selection)

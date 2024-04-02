@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>the selection national</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #2f2d2d;
+        }
+        .player-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .player-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #9999;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .arquero { color: #666; } 
+        .defensor { color: #666; } 
+        .mediocampista { color: #666; } 
+        .delantero { color: #666; } 
+    </style>
+</head>
+<body>
+    <h1>These are the 11 starting players</h1>
+    <ul class="player-list">
+    {% for jugador in players %}
+        <li class="{{ jugador.rol }}">
+            <span class="{{ jugador.rol }}">{{ jugador.nombre }}</span> - {{ jugador.rol }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
