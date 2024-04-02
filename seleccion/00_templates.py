@@ -9,12 +9,12 @@ def saludo():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Welcome to the server</title>
+        <title>My server</title>
     </head>
     <body>
-        <h1>Path available</h1>
-        <h3>/selection</h3> 
-        <p>Available Path: <a href="/selection">/selection</a></p>
+        <h1>Welcome to the server</h1>
+        <h3><p>Available Path: </h3> 
+        <a href="/selection">/selection</a></p>
     </body>
     </html>"""
 
