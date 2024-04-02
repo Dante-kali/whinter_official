@@ -1,16 +1,17 @@
 from flask import Flask
 
 
-app = Flask("servidor DP")
+app = Flask("Mi servidor")
 
 @app.route("/")
-def welcome():
-    return '''<h1> Bienvenido a Mi servidor</h1>
+def saludo():
+    return """
+    <h1>Bienvenido a mi servidor</h1>
     <h3>Rutas Posibles:</h3>
-    <li>/seleccion</li>'''
+    <li>/seleccion</li>"""
 
 @app.route("/seleccion")
-def players():
+def seleccion():
     return """
     <!DOCTYPE html>
     <html>
@@ -37,4 +38,4 @@ def players():
     """
 
 
-app.run(debug=True, port=8000)
+app.run(debug=True, port=8080)
