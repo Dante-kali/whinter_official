@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Así forma la selección Nacional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        .player-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .player-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .arquero { color: #008000; } /* verde */
+        .defensor { color: #0000ff; } /* azul */
+        .mediocampista { color: #00ff1a; } /* verde claro */
+        .delantero { color: #ff0000; } /* rojo */
+    </style>
+</head>
+<body>
+    <h1>Estos son los 11 jugadores titulares</h1>
+    <ul class="player-list">
+    {% for jugador in players %}
+        <li class="{{ jugador.rol }}">
+            <span class="{{ jugador.rol }}">{{ jugador.nombre }}</span> - {{ jugador.rol }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
