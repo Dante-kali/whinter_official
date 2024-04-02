@@ -35,4 +35,4 @@ def views():
     print(rendered_template)
     return rendered_template
 
-app.run(debug=True, port=8000)
+app.run(debug=True, port=8080)
