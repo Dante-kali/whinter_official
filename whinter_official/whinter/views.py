@@ -27,6 +27,7 @@ def selection(request):
     print("-" * 100)
     print(request.method)
     
+    
     selection = {
         'players': [
             {"nombre": "Emiliano Martínez ", "rol": "arquero"},
@@ -39,3 +40,13 @@ def selection(request):
         ]
     }
     return render(request, 'template3.html', selection)
+
+
+from .models import Booking
+
+def create(request, name, service):
+    print("-" * 100)
+    print("-" * 100)
+    print(request.method)
+    booking = Booking(name, service)
+    return HttpResponse(f'the booking {booking}')
