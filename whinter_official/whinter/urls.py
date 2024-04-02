@@ -1,11 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
-from django.http import HttpResponse
-
-def bienvenida(request):
-    return HttpResponse("<h1>Hola, bienvenidos a mi aplicacion<h1>")
+from .views import views, search
 
 urlpatterns = [   
-    path("", bienvenida),
-]
+    path("", views),
+    path("searching/<name>", search)
+] 

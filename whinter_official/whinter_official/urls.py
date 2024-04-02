@@ -21,10 +21,10 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 def saludar(request):
-    return HttpResponse("<h1>Hola, esta es mi primera web</h1>")
+    return HttpResponse("<h1>Welcome to Whinter Official</h1>")
 
 urlpatterns = [   
     path("admin/", admin.site.urls),
-    path("whinter_official", saludar),
+    path("", saludar),
     path("whinter/", include("whinter.urls")),
 ]
