@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from .models import Booking
 # Create your views here.
+
 
 def views(request):
     print("-" * 100)
@@ -22,31 +25,21 @@ def search(request, name):
     return render(request, 'template2.html', name)
 
 
-def selection(request):
+def list(request):
     print("-" * 100)
     print("-" * 100)
     print(request.method)
     
-    
-    selection = {
-        'players': [
-            {"nombre": "Emiliano Martínez ", "rol": "arquero"},
-            {"nombre": "Nicolas Otamendi ", "rol": "defensor"},
-            {"nombre": "Nahuel Molina ", "rol": "defensor"},
-            {"nombre": "Gonzalo Montiel ", "rol": "defensor"},
-            {"nombre": "Lisando Martinez ", "rol": "defensor"},
-            {"nombre": "Angel di maria", "rol": "mediocampista"},
-            {"nombre": "Julián Álvarez", "rol": "delantero"},
-        ]
+    booking = Booking.objects.all()
+    client_list= {
+        'booking' : booking
     }
-    return render(request, 'template3.html', selection)
+    return render(request, 'template3.html', client_list)
 
-
-from .models import Booking
 
 def create(request, name, service):
     print("-" * 100)
     print("-" * 100)
     print(request.method)
-    booking = Booking(name, service)
+    booking = Booking.objects.create(name=name, service=service)
     return HttpResponse(f'the booking {booking}')
