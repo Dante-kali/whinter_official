@@ -5,7 +5,7 @@ from .models import Booking
 # Create your views here.
 
 
-def views(request):
+def home(request):
     print("-" * 100)
     print("-" * 100)
     print(request.method)
@@ -19,11 +19,14 @@ def search(request, name):
     print("-" * 100)
     print("-" * 100)
     print(request.method)
-    name = {
-        'name' : name
+    
+    booking = Booking.objects.filter(name=name).all()
+    context = {
+        'name' : name,
+        'bookings' : [booking]
     }
-    return render(request, 'template2.html', name)
-
+    return render(request, 'template2.html', context)
+ 
 
 def list(request):
     print("-" * 100)
