@@ -8,4 +8,4 @@ urlpatterns = [
     path('list/', list),
     path("searching/<name>", search),
     path('create/<name>/<service>', create)
-]
+] 

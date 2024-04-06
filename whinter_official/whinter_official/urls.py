@@ -20,11 +20,11 @@ from django.urls import path, include
 
 from django.http import HttpResponse
 
-def saludar(request):
+def welcome(request):
     return HttpResponse(""" <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
     <style>
@@ -64,6 +64,6 @@ def saludar(request):
 
 urlpatterns = [   
     path("admin/", admin.site.urls),
-    path("", saludar),
+    path("", welcome),
     path("whinter/", include("whinter.urls")),
 ]
